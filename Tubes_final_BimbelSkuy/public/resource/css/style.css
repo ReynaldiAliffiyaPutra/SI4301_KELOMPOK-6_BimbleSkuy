@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+:root {
+    /* sizing */
+    --nav-height: 82px;
+
+    /* color */
+    --nav-color: #e7e9e8;
+    --sb-color: #e7e7e7;
+    --ft-color: #4d6b99;
+    --bg-color: #d3dedc;
+    --pr-color: #ddd7d7;
+    --ac1-color: #c4c4c4;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: var(--bg-color);
+}
+
+.body-content {
+    margin-top: var(--nav-height);
+    min-height: 100vh;
+}
+.content-wrap {
+    margin-left: 325px;
+    padding-top: 2rem;
+}
+.content-wrap.extended {
+    margin-left: calc(40px + 1.5rem);
+    transition: ease-in-out 0.2s;
+}
+
+.container-fluid {
+    padding: 0 2rem;
+}
+
+.navbar {
+    height: var(--nav-height);
+    background-color: var(--nav-color);
+}
+.navbar.bg-trans {
+    background-color: #e7e9e8c5 !important;
+}
+.navbar-brand {
+    margin-right: 2rem;
+}
+.navbar-nav {
+    gap: 1.5rem;
+}
+.nav-link {
+    font-weight: 600;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    width: 325px;
+    height: 100vh;
+    background-color: var(--sb-color);
+    transition: ease-in-out 0.2s;
+}
+.sidebar.collapsed {
+    width: calc(40px + 1.5rem);
+}
+.sidebar .sbbtn {
+    display: flex;
+    justify-content: flex-end;
+}
+.sidebar .sbbtn button {
+    width: calc(40px + 1.5rem);
+    height: calc(40px + 0.5rem);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: none;
+    background-color: var(--ac1-color);
+    overflow: hidden;
+}
+.sidebar .sbbtn button.close {
+    justify-content: flex-end;
+}
+.sidebar .sbbtn button i {
+    flex-shrink: 0;
+    font-size: 20px;
+    width: 100%;
+}
+.side-nav {
+    padding: 1rem 0.75rem;
+}
+.side-nav ul {
+    flex-shrink: 0;
+    padding-left: 0;
+    list-style-type: none;
+    font-weight: 500;
+    overflow: hidden;
+}
+.side-nav a {
+    text-decoration: none;
+}
+.side-nav li {
+    flex-shrink: 0;
+    display: flex;
+    margin-bottom: 8px;
+    width: 301px;
+    height: 42px;
+    align-items: center;
+    color: black;
+}
+.side-nav li:hover {
+    background-color: var(--ac1-color);
+}
+.side-nav li i {
+    width: 40px;
+    margin-right: 0.75rem;
+    text-align: center;
+}
+
+.wrap {
+    padding: 2rem;
+}
+.wrap.bg-gray {
+    background-color: var(--ac1-color);
+}
+
+footer {
+    position: relative;
+    padding: 2rem 0;
+    background-color: var(--ft-color);
+    color: white;
+}
+.footer-label {
+    padding: 0.5rem 1rem;
+    background-color: var(--ac1-color);
+    color: black;
+    width: max-content;
+    border-radius: 17.6px;
+}
+
+.btn-primary {
+    background-color: #c4c4c4;
+    color: black;
+    border-color: #b4b4b4;
+}
+.btn-primary:hover {
+    background-color: #b4b4b4;
+    border-color: #b4b4b4;
+}
+
+.form-control {
+    background-color: #c4c4c4 !important;
+    border-color: #b4b4b4;
+    border-radius: 0;
+}
+
+.form-select {
+    background-color: #c4c4c4 !important;
+    border-color: #b4b4b4;
+    border-radius: 0;
+}
+
+/* step bar */
+.stepper-wrapper {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.stepper-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+
+    @media (max-width: 768px) {
+        font-size: 12px;
+    }
+}
+
+.stepper-item::before {
+    position: absolute;
+    content: "";
+    border-bottom: 1px solid black;
+    width: 100%;
+    top: 20px;
+    left: -50%;
+    z-index: 2;
+}
+
+.stepper-item::after {
+    position: absolute;
+    content: "";
+    border-bottom: 1px solid black;
+    width: 100%;
+    top: 20px;
+    left: 50%;
+    z-index: 2;
+}
+
+.stepper-item .step-counter {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: solid 2px black;
+    background: #ccc;
+    margin-bottom: 6px;
+}
+
+.stepper-item.active {
+    font-weight: bold;
+}
+
+.stepper-item.completed .step-counter {
+    background-color: black;
+    color: white;
+}
+
+.stepper-item:first-child::before {
+    content: none;
+}
+.stepper-item:last-child::after {
+    content: none;
+}
